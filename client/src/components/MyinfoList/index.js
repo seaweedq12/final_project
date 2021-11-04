@@ -4,7 +4,7 @@ function Myinfolist({me}) {
 
   return (
     <div>
-      <h2 className="col-12">info List</h2>
+      <h2 className="col-12">Info</h2>
       <div>
         <h4 className="col-12">Name</h4>
         <p className="col-12">{me.name}</p>

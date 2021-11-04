@@ -7,7 +7,7 @@ import { QUERY_PRODUCTS } from '../utils/queries';
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
   const products = data?.products || [];
-  
+
   return (
     <main>
       <div className="flex-row justify-center">
@@ -17,7 +17,7 @@ const Home = () => {
           ) : (
             <ProductList
               products={products}
-              title="List of our products"
+              title="Our products"
             />
           )}
         </div>

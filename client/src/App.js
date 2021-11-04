@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Checkout from './pages/Cart';
 import MyAccount from './pages/MyAccount';
+import Success from './pages/Success';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -45,6 +46,9 @@ function App() {
             </Route>
             <Route exact path="/myaccount">
               <MyAccount/>
+            </Route>
+            <Route exact path="/success">
+              <Success/>
             </Route>
           </Switch>
       </Router>

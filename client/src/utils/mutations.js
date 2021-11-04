@@ -31,7 +31,6 @@ mutation addCart($productId: ID!) {
       _id
       productName
       price
-      stock
       imageUrl
     }
   }
@@ -46,7 +45,6 @@ mutation removeCart($productId: ID!) {
       _id
       productName
       price
-      stock
       imageUrl
     }
   }
@@ -57,14 +55,15 @@ mutation removeCart($productId: ID!) {
 export const ADD_ORDER = gql`
 mutation addOrder($products: [ProductInput]!) {
   addOrder(products: $products) {
-    previousOrder{
-      orderDate {
+    previousOrder {
+      _id
+      orderdate 
+      productList {
         _id
         productName
         price
-        stock
         imageUrl
-      }
+      }  
     }
   }
 }

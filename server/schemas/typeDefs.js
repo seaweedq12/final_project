@@ -14,26 +14,27 @@ const typeDefs = gql`
 
   type Order {
     _id: ID
-    orderDate: String
+    orderdate: String
     productList: [Product]
   }
 
   type Product {
     _id: ID
     productName: String
-    price: String
-    stock: String
+    price: Float
     imageUrl: String
   }
 
   input ProductInput {
     _id: ID
     productName: String
-    price: String
-    stock: String
+    price: Float
     imageUrl: String
   }
-
+  
+  type Checkout {
+    session: ID
+  }
 
   type Auth {
     token: ID!
@@ -43,6 +44,7 @@ const typeDefs = gql`
   type Query {
     products: [Product]
     me: User
+    checkout(products: [ProductInput]!): Checkout
   }
 
   type Mutation {

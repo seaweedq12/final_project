@@ -15,8 +15,10 @@ query me {
       imageUrl
     }
     previousOrder {
-      orderDate
+      _id
+      orderdate
       productList{
+        _id
         productName
         price
         imageUrl
@@ -26,13 +28,20 @@ query me {
 }  
 `;
 
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($products: [ProductInput]!) {
+    checkout(products: $products) {
+      session
+    }
+  }
+`;
+
 export const QUERY_PRODUCTS = gql`
   query products {
     products {
       _id
       productName
       price
-      stock
       imageUrl
     }
   }  

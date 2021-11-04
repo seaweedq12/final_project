@@ -11,10 +11,6 @@ const productSchema = new Schema({
     required: true,
     trim: true,
   },
-  stock: {
-    type: Number,
-    default: 0,
-  },
   imageUrl:{
     type: String
   }

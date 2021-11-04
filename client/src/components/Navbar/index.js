@@ -23,12 +23,11 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to='/'>
                 View Products
               </Nav.Link>
-              <Nav.Link as={Link} to='/Checkout'>
-                Cart
-              </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
+                  <Nav.Link as={Link} to='/Checkout'>
+                    Cart
+                  </Nav.Link>
                   <Nav.Link as={Link} to='/myaccount'>
                     My Account
                   </Nav.Link>
